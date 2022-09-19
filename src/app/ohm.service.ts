@@ -16,7 +16,7 @@ export class OhmService {
     return this.http.delete(this.base+'deleteGcp?id='+id);
   }
 
-  base = env.ENDPOINT;
+  base = "https://api.digitize.openhistorymap.org/api/";
   txbase = env.TAXONOMY_ENDPOINT;
   mbase = env.MAPPING_ENDPOINT;
 
@@ -24,7 +24,7 @@ export class OhmService {
     private http: HttpClient,
     private docker: MnDockerService
   ) {
-    this.base = docker.getEnv('ENDPOINT');
+    this.base = "https://api.digitize.openhistorymap.org/api/";
     this.txbase = docker.getEnv('TAXONOMY_ENDPOINT');
     this.mbase = docker.getEnv('MAPPING_ENDPOINT');
   }
